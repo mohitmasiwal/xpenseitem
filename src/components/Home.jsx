@@ -98,7 +98,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={`max-w-md mx-auto mt-10 p-6 border rounded shadow ${isDarkMode ? 'bg-gray-900 text-green' : 'bg-blue-600 text-red'}`}>
+    <div className={`max-w-md mx-auto mt-10 p-6 border rounded shadow ${isDarkMode ? 'bg-gray-900 text-gray-700' : 'bg-blue-600 text-red'}`}>
       <h2 className="text-2xl font-bold mb-4 text-center">Add Daily Expense</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -143,7 +143,7 @@ const Home = () => {
                 <span>₹{exp.amount} - {exp.description} ({exp.category})</span>
                 <div className="space-x-2">
                   <button onClick={() => deletexpnses(exp.id)} className="text-red-600 font-bold">Delete</button>
-                  <button className="text-blue-600 font-bold">Edit</button>
+                  
                 </div>
               </li>
             ))}
