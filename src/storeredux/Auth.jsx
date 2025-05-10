@@ -7,6 +7,7 @@ initialState:{
     login:false,
     token:null,
     isProfileComplete:false,
+    premium:false
 
 },
 reducers:{
@@ -14,11 +15,21 @@ reducers:{
 login: (state,action)=>{
     state.login = true
     state.token = action.payload
-    state.isProfileComplete = action.payload;
+      state.isProfileComplete = action.payload.isProfileComplete || false;
 },
 logout: (state)=>{
     state.login = false
     state.token = null
+  
+},
+activatepremium : (state)=>{
+    state.premium= !state.premium
+     
+  
+},
+profilecomplete: (state)=>{
+    state.isProfileComplete = true
+     
   
 }
 
@@ -26,6 +37,6 @@ logout: (state)=>{
 }
 
 })
- export const {login,logout} =  Authslice.actions;
+ export const {login,logout,activatepremium,profilecomplete} =  Authslice.actions;
  export default  Authslice.reducer;
  

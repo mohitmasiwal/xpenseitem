@@ -28,6 +28,7 @@ const Signup = () => {
         console.log("Signup successful:", res.data);
         localStorage.setItem("token", res.data.idToken);
         alert("Signup successful!");
+         
       })
       .catch((err) => {
         console.error("Signup failed:", err);
