@@ -1,7 +1,7 @@
  import React, { useRef } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import {profilecomplete} from "./storeredux/Auth"
+ 
 const CompleteProfile = () => {
   const nameRef = useRef();
   const photoRef = useRef();
@@ -30,9 +30,11 @@ if (!token) {
         }
       )
       .then((res) => {
+       
+      let email = res.data.email  
   alert('Profile updated successfully!');
-  dispatch(profilecomplete());
-  localStorage.setItem("isProfileComplete", "true");  
+   localStorage.setItem("currentUserEmail", email);
+  localStorage.setItem( `${email}isProfileComplete`, "true");  
 })
 
       .catch((err) => {

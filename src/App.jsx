@@ -21,12 +21,16 @@ const App = () => {
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
-     
+   
+    const email = localStorage.getItem("currentUserEmail");
+     const isComplete = localStorage.getItem(`${email}isProfileComplete`) === "true";
+    
 
     if (storedToken   !== null) {
       dispatch(login({ token: storedToken  }));
     }
     
+
   }, [dispatch]);
 
   return (
