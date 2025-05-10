@@ -25,8 +25,9 @@ const Signup = () => {
         signupData
       )
       .then((res) => {
-        console.log("Signup successful:", res.data);
-        localStorage.setItem("token", res.data.idToken);
+        console.log("Signup successful:", "token", res.data.idToken);
+       
+        
         alert("Signup successful!");
          
       })

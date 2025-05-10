@@ -28,10 +28,10 @@ const Login = () => {
         loginData
       )
       .then((res) => {
-        console.log(res.data.localId);
         localStorage.setItem('token', res.data.idToken);
         localStorage.setItem('uid', res.data.localId);
         dispatch(login({ token: res.data.idToken, isProfileComplete: false }));
+        console.log('token', res.data.idToken);
 
         navigate('/');
         alert('Login successful!');

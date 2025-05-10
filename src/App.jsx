@@ -9,7 +9,7 @@ import VerifyEmail from './VerifyEmail';
 import ForgotPassword from './ForgotPassword';
 import Home from './components/Home';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductList from './components/Shop';
+ 
 import { login } from './storeredux/Auth';
 import About from './components/About';
 import Shoping from './Shoping';
@@ -26,6 +26,7 @@ const App = () => {
     if (storedToken   !== null) {
       dispatch(login({ token: storedToken  }));
     }
+    
   }, [dispatch]);
 
   return (
